@@ -4,6 +4,8 @@
     <bytecodeTargetLevel target="1.7">
       <module name="AngryFly.android" target="11" />
       <module name="AngryFly.desktop" target="1.8" />
+      <module name="AngryFly1.0.android" target="11" />
+      <module name="AngryFly1.0.desktop" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

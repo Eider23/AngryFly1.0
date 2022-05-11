@@ -1,5 +1,6 @@
 package com.eider.angryfly.states;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -16,11 +17,16 @@ public class MenuState extends State{
 
     @Override
     public void handleInput() {
+        if (Gdx.input.justTouched()){
+            gsm.set(new PlayState(gsm));
+            dispose();
+        }
 
     }
 
     @Override
     public void update(float dt) {
+        handleInput();
 
     }
 
@@ -28,9 +34,9 @@ public class MenuState extends State{
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
 
-        spriteBatch.draw(background, 0,0, AngryFly.WIDTH, AngryFly.HEIGHT );
+        spriteBatch.draw(background, 0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
 
-        spriteBatch.draw(playButton, (AngryFly.WIDTH / 2 ) - (playButton.getWidth() / 2), (AngryFly.HEIGHT / 2) - (playButton.getHeight() / 2));
+        spriteBatch.draw(playButton, (Gdx.graphics.getWidth() / 2) - (playButton.getHeight() / 2), (Gdx.graphics.getHeight() / 2 - (playButton.getHeight() / 2)) );
 
         spriteBatch.end();
     }
@@ -40,4 +46,5 @@ public class MenuState extends State{
         background.dispose();
         playButton.dispose();
     }
+
 }
