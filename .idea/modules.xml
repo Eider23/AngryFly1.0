@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AngryFly.iml" filepath="$PROJECT_DIR$/.idea/modules/AngryFly.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/AngryFly.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/AngryFly.android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/AngryFly.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/AngryFly.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/AngryFly.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/AngryFly.desktop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/html/AngryFly.html.iml" filepath="$PROJECT_DIR$/.idea/modules/html/AngryFly.html.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ios/AngryFly.ios.iml" filepath="$PROJECT_DIR$/.idea/modules/ios/AngryFly.ios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AngryFly1.0.iml" filepath="$PROJECT_DIR$/.idea/modules/AngryFly1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/AngryFly1.0.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/AngryFly1.0.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/AngryFly1.0.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/AngryFly1.0.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/AngryFly1.0.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/AngryFly1.0.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/html/AngryFly1.0.html.iml" filepath="$PROJECT_DIR$/.idea/modules/html/AngryFly1.0.html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ios/AngryFly1.0.ios.iml" filepath="$PROJECT_DIR$/.idea/modules/ios/AngryFly1.0.ios.iml" />
     </modules>
   </component>
 </project>
