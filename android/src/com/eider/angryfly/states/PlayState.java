@@ -50,6 +50,7 @@ public class PlayState extends State{
             }
             if (tower.collides(bird.getBounds())){
                 gsm.set(new PlayState(gsm));
+
             }
         }
 
