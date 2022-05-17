@@ -49,7 +49,7 @@ public class PlayState extends State{
                 tower.reposition(tower.getPosTopTower().y + ((Tower.TOWER_WIDTH + TOWER_SPACING) * TOWER_COUNT));
             }
             if (tower.collides(bird.getBounds())){
-                gsm.set(new PlayState(gsm));
+                gsm.set(new MenuState(gsm));
 
             }
         }
