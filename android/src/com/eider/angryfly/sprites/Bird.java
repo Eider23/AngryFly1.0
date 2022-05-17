@@ -2,12 +2,13 @@ package com.eider.angryfly.sprites;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
 public class Bird {
 
-    private static final int MOVEMENT = 100;
+    private static final int MOVEMENT = 250;
 
     private static final  int GRAVITY = 30;
 
@@ -15,6 +16,8 @@ public class Bird {
     private Vector3 velocity;
 
     private Texture bird;
+    private Animation birdAnimation;
+    private Texture texture;
 
     private Rectangle bounds;
 
@@ -22,10 +25,13 @@ public class Bird {
         position = new Vector3(x, y, 0);
         velocity = new Vector3(0,0,0);
         bird = new Texture("RedBird.png");
+        //texture = new Texture("birdAnimation.png");
+        //birdAnimation = new Animation(new TextureRegion(texture), 2,1f);
         bounds = new Rectangle(x, y, bird.getWidth(), bird.getHeight());
     }
 
     public void update(float dt){
+        //birdAnimation.update(dt);
         if (position.y > 0){
             velocity.add(GRAVITY,0, 0);
         }
@@ -55,5 +61,8 @@ public class Bird {
     public void  jump(){
         velocity.x = -500;
 
+    }
+    public void dispose(){
+        bird.dispose();
     }
 }

@@ -10,9 +10,9 @@ public class Tower {
 
     public static final int TOWER_WIDTH = 52;
 
-    private static final int FLUCTUATION = 450;
+    private static final int FLUCTUATION = 250;
     private static final int TOWER_GAP = 950;
-    private static final int LOWEST_OPENING = -200;
+    private static final int LOWEST_OPENING = -250;
 
     private Texture topTower;
     private Texture bottomTower;
@@ -86,4 +86,8 @@ public class Tower {
         this.posTopTower = posTopTower;
     }
 
+    public void dispose(){
+        topTower.dispose();
+        bottomTower.dispose();
+    }
 }

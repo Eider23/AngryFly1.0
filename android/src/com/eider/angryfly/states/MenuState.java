@@ -3,6 +3,7 @@ package com.eider.angryfly.states;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
 
 public class MenuState extends State{
 
@@ -19,7 +20,6 @@ public class MenuState extends State{
     public void handleInput() {
         if (Gdx.input.justTouched()){
             gsm.set(new PlayState(gsm));
-            dispose();
         }
 
     }
@@ -45,6 +45,7 @@ public class MenuState extends State{
     public void dispose() {
         background.dispose();
         playButton.dispose();
+        System.out.println("MENU STATE DISPOSED");
     }
 
 }
