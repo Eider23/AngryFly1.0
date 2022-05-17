@@ -48,6 +48,9 @@ public class PlayState extends State{
             if (camera.position.y - (camera.viewportWidth/2) >tower.getPosTopTower().y +tower.getTopTower().getWidth() ){
                 tower.reposition(tower.getPosTopTower().y + ((Tower.TOWER_WIDTH + TOWER_SPACING) * TOWER_COUNT));
             }
+            if (tower.collides(bird.getBounds())){
+                gsm.set(new PlayState(gsm));
+            }
         }
 
         camera.update();
