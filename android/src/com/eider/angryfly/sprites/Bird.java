@@ -10,7 +10,7 @@ public class Bird {
 
     private static final int MOVEMENT = 250;
 
-    private static final  int GRAVITY = 30;
+    private static final  int GRAVITY = 35;
 
     private Vector3 position;
     private Vector3 velocity;
