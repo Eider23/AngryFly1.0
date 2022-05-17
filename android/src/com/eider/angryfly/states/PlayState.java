@@ -9,8 +9,8 @@ import com.eider.angryfly.sprites.Tower;
 
 public class PlayState extends State{
 
-    private static final int TOWER_SPACING = 125;
-    private static final int TOWER_COUNT = 4;
+    private static final int TOWER_SPACING = 300;
+    private static final int TOWER_COUNT = 6;
 
     private Bird bird;
     private Texture bg;

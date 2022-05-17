@@ -9,7 +9,7 @@ public class Tower {
 
     public static final int TOWER_WIDTH = 52;
 
-    private static final int FLUCTUATION = 150;
+    private static final int FLUCTUATION = 450;
     private static final int TOWER_GAP = 950;
     private static final int LOWEST_OPENING = -200;
 
