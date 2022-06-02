@@ -16,8 +16,6 @@ public class Bird {
     private Vector3 position;
     private Vector3 velocity;
 
-    //private Texture bird;
-
     private Animation birdAnimation;
     private Texture texture;
 
