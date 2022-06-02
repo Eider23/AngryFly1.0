@@ -11,9 +11,9 @@ import com.eider.angryfly.sprites.Tower;
 
 public class PlayState extends State{
 
-    private static final int TOWER_SPACING = 250;
+    private static final int TOWER_SPACING = 125;
     private static final int TOWER_COUNT = 6;
-    private static final int GROUND_Y_OFFSET = 670;
+    private static final int GROUND_Y_OFFSET = -430;
 
     private Bird bird;
     private Texture bg;
@@ -21,19 +21,17 @@ public class PlayState extends State{
     private Texture ground;
     private Vector2 groundPos1;
     private Vector2 groundPos2;
-    //private Vector2 groundPos3;
 
     private Array<Tower> towers;
 
     public PlayState(GameStateManager gsm) {
         super(gsm);
         bird = new Bird(100,640);
-        camera.setToOrtho(false, (float) (Gdx.graphics.getWidth() /2.4), (float) (Gdx.graphics.getHeight()/2.7));
+        camera.setToOrtho(false, (float) (Gdx.graphics.getWidth() /2.7), (float) (Gdx.graphics.getHeight()/2.4));
         bg = new Texture("fondo.png");
-        ground = new Texture("suelo.png");
-        groundPos1 = new Vector2(camera.position.y + camera.viewportWidth / 2, GROUND_Y_OFFSET);
-        groundPos2 = new Vector2((camera.position.y + camera.viewportWidth / 2) - ground.getWidth(),GROUND_Y_OFFSET);
-        //groundPos3 = new Vector2(((camera.position.y + camera.viewportWidth / 2) - ground.getWidth())+ ground.getWidth(), GROUND_Y_OFFSET);
+        ground = new Texture("suelo4.png");
+        groundPos1 = new Vector2(camera.position.x - camera.viewportWidth / 2, GROUND_Y_OFFSET);
+        groundPos2 = new Vector2((camera.position.x - camera.viewportWidth / 2) + ground.getWidth(), GROUND_Y_OFFSET);
 
         towers = new Array<Tower>();
 
@@ -64,12 +62,12 @@ public class PlayState extends State{
                 tower.reposition(tower.getPosTopTower().x + ((Tower.TOWER_WIDTH + TOWER_SPACING) * TOWER_COUNT));
             }
             if (tower.collides(bird.getBounds())){
-                gsm.set(new PlayState(gsm));
+                gsm.set(new MenuState(gsm));
 
             }
         }
 
-        if (bird.getPosition().x >= ground.getWidth() + GROUND_Y_OFFSET)
+        if (bird.getPosition().y <= ground.getHeight() + GROUND_Y_OFFSET)
             gsm.set(new PlayState(gsm));
 
         camera.update();
@@ -86,9 +84,8 @@ public class PlayState extends State{
             spriteBatch.draw(tower.getTopTower(), tower.getPosTopTower().x, tower.getPosTopTower().y);
             spriteBatch.draw(tower.getBottomTower(), tower.getPosBotTower().x, tower.getPosBotTower().y);
         }
-        //spriteBatch.draw(ground, groundPos1.y, groundPos1.x);
-        //spriteBatch.draw(ground, groundPos2.y, groundPos2.x);
-        //spriteBatch.draw(ground, groundPos3.y, groundPos3.x);
+        spriteBatch.draw(ground, groundPos1.x, groundPos1.y);
+        spriteBatch.draw(ground, groundPos2.x, groundPos2.y);
         spriteBatch.end();
 
     }
@@ -104,13 +101,10 @@ public class PlayState extends State{
     }
 
     private void updateGround(){
-        if (camera.position.y -(camera.viewportHeight / 2) > groundPos1.y + ground.getHeight())
-            groundPos1.add(0, ground.getHeight() * 2);
+        if (camera.position.x - (camera.viewportWidth / 2) > groundPos1.x + ground.getWidth())
+            groundPos1.add(ground.getWidth() * 2,0);
 
-        if (camera.position.y -(camera.viewportHeight / 2) > groundPos2.y + ground.getHeight())
-            groundPos2.add(0, ground.getHeight() * 2);
-
-        //if (camera.position.x -(camera.viewportWidth / 2) > groundPos3.x + ground.getWidth())
-            //groundPos3.add(0, ground.getWidth() * 2);
+        if (camera.position.x - (camera.viewportWidth / 2) > groundPos2.x + ground.getWidth())
+            groundPos2.add(ground.getWidth() * 2,0);
     }
 }

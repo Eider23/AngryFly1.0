@@ -8,11 +8,11 @@ import java.util.Random;
 
 public class Tower {
 
-    public static final int TOWER_WIDTH = 42;
+    public static final int TOWER_WIDTH = 220;
 
-    private static final int FLUCTUATION = 130;
-    private static final int TOWER_GAP = 100;
-    private static final int LOWEST_OPENING = 120;
+    private static final int FLUCTUATION = 200;
+    private static final int TOWER_GAP = 200;
+    private static final int LOWEST_OPENING = 300;
 
     private Texture topTower;
     private Texture bottomTower;
