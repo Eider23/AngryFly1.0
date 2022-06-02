@@ -13,7 +13,7 @@ public class MenuState extends State{
     public MenuState(GameStateManager gameStateManager) {
         super(gameStateManager);
         background = new Texture("fondo.png");
-        playButton = new Texture("botonplay.png");
+        playButton = new Texture("botonPlay.png");
     }
 
     @Override
@@ -36,7 +36,7 @@ public class MenuState extends State{
 
         spriteBatch.draw(background, 0,0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() );
 
-        spriteBatch.draw(playButton, (Gdx.graphics.getWidth() / 2) - (playButton.getHeight() / 2), (Gdx.graphics.getHeight() / 2 - (playButton.getHeight() / 2)) );
+        spriteBatch.draw(playButton, (Gdx.graphics.getWidth() / 2) - (playButton.getWidth() / 2) ,(Gdx.graphics.getHeight() / 2) - (playButton.getHeight() / 2 ) );
 
         spriteBatch.end();
     }

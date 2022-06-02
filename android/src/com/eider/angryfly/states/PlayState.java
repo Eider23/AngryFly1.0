@@ -11,7 +11,7 @@ import com.eider.angryfly.sprites.Tower;
 
 public class PlayState extends State{
 
-    private static final int TOWER_SPACING = 300;
+    private static final int TOWER_SPACING = 250;
     private static final int TOWER_COUNT = 6;
     private static final int GROUND_Y_OFFSET = 670;
 
@@ -27,7 +27,7 @@ public class PlayState extends State{
 
     public PlayState(GameStateManager gsm) {
         super(gsm);
-        bird = new Bird(320,50);
+        bird = new Bird(100,640);
         camera.setToOrtho(false, (float) (Gdx.graphics.getWidth() /2.4), (float) (Gdx.graphics.getHeight()/2.7));
         bg = new Texture("fondo.png");
         ground = new Texture("suelo.png");
@@ -56,12 +56,12 @@ public class PlayState extends State{
         updateGround();
         bird.update(dt);
 
-        camera.position.y = bird.getPosition().y + 80;
+        camera.position.x = bird.getPosition().x + 80;
 
         for (int i = 0; i < towers.size; i++){
             Tower tower = towers.get(i);
-            if (camera.position.y - (camera.viewportWidth/2) >tower.getPosTopTower().y +tower.getTopTower().getWidth() ){
-                tower.reposition(tower.getPosTopTower().y + ((Tower.TOWER_WIDTH + TOWER_SPACING) * TOWER_COUNT));
+            if (camera.position.x - (camera.viewportWidth / 2) > tower.getPosTopTower().x + tower.getTopTower().getWidth()){
+                tower.reposition(tower.getPosTopTower().x + ((Tower.TOWER_WIDTH + TOWER_SPACING) * TOWER_COUNT));
             }
             if (tower.collides(bird.getBounds())){
                 gsm.set(new PlayState(gsm));
@@ -79,7 +79,7 @@ public class PlayState extends State{
     public void render(SpriteBatch spriteBatch) {
         spriteBatch.setProjectionMatrix(camera.combined);
         spriteBatch.begin();
-        spriteBatch.draw(bg, camera.position.x - (camera.viewportWidth / 2),camera.position.y - (camera.viewportHeight / 2));
+        spriteBatch.draw(bg, camera.position.x - (camera.viewportWidth / 2), camera.position.y - (camera.viewportHeight / 2));
         spriteBatch.draw(bird.getBird(), bird.getPosition().x,bird.getPosition().y);
 
         for (Tower tower : towers){

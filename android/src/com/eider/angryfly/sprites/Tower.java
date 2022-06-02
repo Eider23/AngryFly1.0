@@ -8,11 +8,11 @@ import java.util.Random;
 
 public class Tower {
 
-    public static final int TOWER_WIDTH = 52;
+    public static final int TOWER_WIDTH = 42;
 
-    private static final int FLUCTUATION = 250;
-    private static final int TOWER_GAP = 950;
-    private static final int LOWEST_OPENING = -250;
+    private static final int FLUCTUATION = 130;
+    private static final int TOWER_GAP = 100;
+    private static final int LOWEST_OPENING = 120;
 
     private Texture topTower;
     private Texture bottomTower;
@@ -25,26 +25,27 @@ public class Tower {
     private Rectangle boundsTop;
     private Rectangle boundsBot;
 
-    public  Tower(float y){
-        topTower = new Texture("obstaculoinferior.PNG");
-        bottomTower = new Texture("obstaculosuperior.png");
+    public  Tower(float x){
+        topTower = new Texture("obstaculoSuperior.png");
+        bottomTower = new Texture("obstaculoInferior.png");
 
         rand = new Random();
 
-        posBotTower = new Vector2(rand.nextInt(FLUCTUATION) - TOWER_GAP - LOWEST_OPENING,y );
-        posTopTower = new Vector2(posBotTower.x + TOWER_GAP + topTower.getHeight() , y);
+        posTopTower = new Vector2(x, rand.nextInt(FLUCTUATION) + TOWER_GAP + LOWEST_OPENING );
+        posBotTower = new Vector2(x, posTopTower.y - TOWER_GAP - bottomTower.getHeight());
 
-        boundsBot = new Rectangle(posTopTower.x, posTopTower.y, topTower.getWidth(), topTower.getHeight());
-        boundsTop = new Rectangle(posBotTower.x, posBotTower.y, bottomTower.getWidth(), bottomTower.getHeight());
+
+        boundsTop = new Rectangle(posTopTower.x, posTopTower.y, topTower.getWidth(), topTower.getHeight());
+        boundsBot = new Rectangle(posBotTower.x, posBotTower.y, bottomTower.getWidth(), bottomTower.getHeight());
 
     }
 
-    public void reposition(float y){
-        posBotTower.set(rand.nextInt(FLUCTUATION) - TOWER_GAP - LOWEST_OPENING,y);
-        posTopTower.set(posBotTower.x + TOWER_GAP + topTower.getHeight() , y);
+    public void reposition(float x){
+        posTopTower.set(x, rand.nextInt(FLUCTUATION) + TOWER_GAP + LOWEST_OPENING);
+        posBotTower.set(x, posTopTower.y - TOWER_GAP - bottomTower.getHeight());
 
-        boundsBot.setPosition(posBotTower.x, posBotTower.y);
         boundsTop.setPosition(posTopTower.x, posTopTower.y);
+        boundsBot.setPosition(posBotTower.x, posBotTower.y);
 
     }
 
