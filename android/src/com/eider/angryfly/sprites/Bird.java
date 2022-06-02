@@ -62,7 +62,7 @@ public class Bird {
     }
 
     public void  jump(){
-        velocity.y= 420;
+        velocity.y= 520;
         flap.play(0.9f);
     }
     public void dispose(){

@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Tower {
 
-    public static final int TOWER_WIDTH = 240;
+    public static final int TOWER_WIDTH = 300;
 
     private static final int FLUCTUATION = 380;
     private static final int TOWER_GAP = 200;

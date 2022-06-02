@@ -68,7 +68,7 @@ public class PlayState extends State{
         }
 
         if (bird.getPosition().y <= ground.getHeight() + GROUND_Y_OFFSET)
-            gsm.set(new PlayState(gsm));
+            gsm.set(new MenuState(gsm));
 
         camera.update();
     }
