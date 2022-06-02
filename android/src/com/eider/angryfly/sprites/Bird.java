@@ -9,14 +9,15 @@ import com.badlogic.gdx.math.Vector3;
 
 public class Bird {
 
-    private static final int MOVEMENT = 100;
+    private static final int MOVEMENT = 200;
 
-    private static final  int GRAVITY = -20;
+    private static final  int GRAVITY = -25;
 
     private Vector3 position;
     private Vector3 velocity;
 
-    private Texture bird;
+    //private Texture bird;
+
     private Animation birdAnimation;
     private Texture texture;
 
@@ -26,15 +27,15 @@ public class Bird {
     public Bird(int x, int y){
         position = new Vector3(x, y, 0);
         velocity = new Vector3(0,0,0);
-        bird = new Texture("redBird.png");
-        //texture = new Texture("birdAnimation.png");
-        //birdAnimation = new Animation(new TextureRegion(texture), 2,1f);
+        texture = new Texture("animation.png");
+        birdAnimation = new Animation(new TextureRegion(texture), 2,2f);
+
         flap = Gdx.audio.newSound(Gdx.files.internal("sfx_wing.ogg"));
-        bounds = new Rectangle(x, y, bird.getWidth(), bird.getHeight());
+        bounds = new Rectangle(x, y, texture.getWidth() / 2, texture.getHeight());
     }
 
     public void update(float dt){
-        //birdAnimation.update(dt);
+        birdAnimation.update(dt);
         if (position.y > 0){
             velocity.add(0,GRAVITY, 0);
         }
@@ -58,17 +59,17 @@ public class Bird {
         return position;
     }
 
-    public Texture getBird() {
-        return bird;
+    public TextureRegion getTexture() {
+        return birdAnimation.getFrame();
     }
 
     public void  jump(){
-        velocity.y= 250;
+        velocity.y= 400;
         flap.play(0.9f);
 
     }
     public void dispose(){
-        bird.dispose();
+        texture.dispose();
         flap.dispose();
     }
 }

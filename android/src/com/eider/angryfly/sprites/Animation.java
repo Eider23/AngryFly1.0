@@ -16,7 +16,7 @@ public class Animation {
         frames = new Array<TextureRegion>();
         int frameWidth = region.getRegionWidth() / frameCount;
         for (int i = 0; i < frameCount; i++){
-            frames.add(new TextureRegion(region,  0,frameWidth,region.getRegionHeight() , i * frameWidth));
+            frames.add(new TextureRegion(region,  i * frameWidth,0,frameWidth , region.getRegionHeight()));
         }
         this.frameCount = frameCount;
         maxFrameTime = cycleTime / frameCount;

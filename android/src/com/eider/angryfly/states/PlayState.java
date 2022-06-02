@@ -78,7 +78,7 @@ public class PlayState extends State{
         spriteBatch.setProjectionMatrix(camera.combined);
         spriteBatch.begin();
         spriteBatch.draw(bg, camera.position.x - (camera.viewportWidth / 2), camera.position.y - (camera.viewportHeight / 2));
-        spriteBatch.draw(bird.getBird(), bird.getPosition().x,bird.getPosition().y);
+        spriteBatch.draw(bird.getTexture(), bird.getPosition().x,bird.getPosition().y);
 
         for (Tower tower : towers){
             spriteBatch.draw(tower.getTopTower(), tower.getPosTopTower().x, tower.getPosTopTower().y);
