@@ -40,7 +40,7 @@ public class AngryFly extends ApplicationAdapter {
 	private void setUpMusic(){
 		music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
 		music.setLooping(true);
-		music.setVolume(0.3f);
+		music.setVolume(1f);
 		music.play();
 	}
 

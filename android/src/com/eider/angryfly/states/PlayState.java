@@ -13,7 +13,7 @@ public class PlayState extends State{
 
     private static final int TOWER_SPACING = 125;
     private static final int TOWER_COUNT = 6;
-    private static final int GROUND_Y_OFFSET = -430;
+    private static final int GROUND_Y_OFFSET = -550;
 
     private Bird bird;
     private Texture bg;
