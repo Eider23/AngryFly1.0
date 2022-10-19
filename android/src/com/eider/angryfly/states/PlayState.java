@@ -27,7 +27,7 @@ public class PlayState extends State{
     public PlayState(GameStateManager gsm) {
         super(gsm);
 
-        bird = new Bird(100,600);
+        bird = new Bird(100,1000);
         camera.setToOrtho(false, (float) (Gdx.graphics.getWidth() /3.6), (float) (Gdx.graphics.getHeight()/3.3));
         bg = new Texture("fondo.png");
         ground = new Texture("suelo4.png");
