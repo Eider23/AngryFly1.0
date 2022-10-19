@@ -8,8 +8,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class AngryFly extends ApplicationAdapter {
 
-	//public static final int WIDTH = 480;
-	//public static final int HEIGHT = 720;
+
 	public static final String TITLE = "AngryFly para Android";
 	private Music music;
 
@@ -42,6 +41,7 @@ public class AngryFly extends ApplicationAdapter {
 		music.setLooping(true);
 		music.setVolume(1f);
 		music.play();
+
 	}
 
 }
