@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector3;
 
 public class Bird {
 
-    private static final int MOVEMENT = 200;
+    private static final int MOVEMENT = 205;
 
     private static final  int GRAVITY = -25;
 
